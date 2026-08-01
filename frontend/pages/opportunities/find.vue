@@ -34,7 +34,7 @@ async function saveOpportunity(id: string) {
     <main class="mx-auto max-w-5xl px-6 py-12">
       <p class="waypoint-label mb-2">Phase 4 · The matching engine</p>
       <h1 class="text-3xl font-semibold text-parchment">Find opportunities</h1>
-      <p class="mt-2 max-w-2xl text-navy-600">
+      <p class="mt-2 max-w-2xl text-gray-400">
         We embed your profile, pull the closest opportunities by semantic search, then
         have the AI rank and explain the best fits.
       </p>

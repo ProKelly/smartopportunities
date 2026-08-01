@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import get_settings
-from app.routers import applications, auth, career_coach, dashboard, opportunities, profile, recommend, roadmap
+from app.routers import applications, auth, career_coach, dashboard, documents, opportunities, profile, recommend, roadmap
 
 settings = get_settings()
 
@@ -26,6 +26,7 @@ app.include_router(opportunities.router)
 app.include_router(recommend.router)
 app.include_router(roadmap.router)
 app.include_router(career_coach.router)
+app.include_router(documents.router)
 app.include_router(dashboard.router)
 app.include_router(applications.router)
 
@@ -38,4 +39,3 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "healthy"}
-

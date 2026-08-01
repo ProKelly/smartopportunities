@@ -32,7 +32,7 @@ const links = [
         </button>
 
         <NuxtLink to="/dashboard" class="flex items-center gap-2">
-          <span class="text-lg font-display font-semibold text-parchment">OpportunityOS</span>
+          <span class="text-lg font-display font-semibold text-parchment">CITYOS</span>
           <span class="rounded-full bg-signal/15 px-2 py-0.5 text-[10px] font-mono uppercase tracking-widest text-signal">AI</span>
         </NuxtLink>
       </div>

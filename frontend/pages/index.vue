@@ -44,7 +44,7 @@ const waypoints = [
         <span class="text-signal">Get charted a course to them.</span>
       </h1>
       <p class="relative z-10 mt-6 max-w-xl text-lg text-gray-300">
-        Tell OpportunityOS AI who you are. It finds the scholarships, jobs, grants, and
+        Tell CITYOS AI who you are. It finds the scholarships, jobs, grants, and
         competitions that fit — explains why — and builds the plan to get you there.
       </p>
       <div class="relative z-10 mt-10 flex flex-col gap-4 sm:flex-row">
@@ -67,8 +67,8 @@ const waypoints = [
       </ol>
     </section>
 
-    <footer class="border-t border-navy-800 py-8 text-center text-sm text-navy-600">
-      OpportunityOS AI — built for students and early-career professionals navigating what's next.
+    <footer class="border-t border-navy-800 py-8 text-center text-sm text-gray-400">
+      CITYOS AI — built for students and early-career professionals navigating what's next.
     </footer>
   </div>
 

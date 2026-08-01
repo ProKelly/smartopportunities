@@ -1,4 +1,4 @@
-# OpportunityOS AI
+# CityOS AI 
 
 **Your AI-powered opportunity navigator.**
 
@@ -7,7 +7,7 @@ Full-stack implementation: **Nuxt 3** frontend, **FastAPI** backend, **Supabase*
 local **fastembed** model for semantic-search embeddings.
 
 ```
-opportunityos-ai/
+smartopportunities/
 ├── backend/     FastAPI app, Supabase schema, seed data
 └── frontend/    Nuxt 3 app
 ```
@@ -60,7 +60,7 @@ cp .env.example .env   # fill in NUXT_PUBLIC_API_BASE + your Supabase URL/anon k
 npm run dev
 ```
 
-App at `http://localhost:3000`.
+App at `http://localhost:8000/`.
 
 ## How the AI pipeline works
 
@@ -94,3 +94,6 @@ The frontend uses a "night navigator" visual theme — a dark chart-like backgro
 a gold "signal/beacon" accent for primary actions, and a teal "charted route" accent
 for matches and progress — built around the idea of *charting a course* to an
 opportunity rather than just listing search results.
+
+
+Hosted application is accessible at [https://cityos-tau.vercel.app](https://cityos-tau.vercel.app).

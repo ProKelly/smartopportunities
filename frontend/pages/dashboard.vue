@@ -32,8 +32,14 @@ const cards = computed(() => {
   <div>
     <AppNav />
     <main class="mx-auto max-w-6xl px-6 py-12">
-      <p class="waypoint-label mb-2">Mission control</p>
-      <h1 class="text-3xl font-semibold text-parchment">Dashboard</h1>
+      <!-- Logo added to header area -->
+      <div class="flex items-center gap-4 mb-8">
+        <img src="/cityos.png" alt="CityOS Logo" class="h-10 w-auto" />
+        <div>
+          <p class="waypoint-label mb-1">Mission control</p>
+          <h1 class="text-3xl font-semibold text-parchment">Dashboard</h1>
+        </div>
+      </div>
 
       <div v-if="loading" class="mt-8 text-navy-600">Charting your dashboard...</div>
 

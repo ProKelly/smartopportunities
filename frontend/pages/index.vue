@@ -13,7 +13,7 @@ const waypoints = [
 <template>
   <div class="relative overflow-hidden">
     <!-- Hero -->
-    <section class="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 text-center">
+    <section class="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 text-center pt-16">
       <!-- Signature: radar sweep behind the headline -->
       <div class="pointer-events-none absolute left-1/2 top-1/2 -z-0 h-[640px] w-[640px] -translate-x-1/2 -translate-y-1/2 opacity-70">
         <svg viewBox="0 0 640 640" class="h-full w-full">
@@ -37,6 +37,9 @@ const waypoints = [
           <circle cx="470" cy="410" r="4" fill="#4FD1C5" />
         </svg>
       </div>
+
+      <!-- Large Logo added to Hero -->
+      <img src="/cityos.png" alt="CityOS Logo" class="h-24 w-auto relative z-10 mb-10" />
 
       <p class="waypoint-label relative z-10 mb-6">Your AI-powered opportunity navigator</p>
       <h1 class="relative z-10 max-w-3xl text-4xl font-semibold leading-tight text-parchment sm:text-6xl">
@@ -71,5 +74,4 @@ const waypoints = [
       CITYOS AI — built for students and early-career professionals navigating what's next.
     </footer>
   </div>
-
-  </template>
+</template>

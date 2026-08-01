@@ -92,7 +92,7 @@ onMounted(loadProfile);
     <main class="mx-auto max-w-4xl px-6 py-12">
       <p class="waypoint-label mb-2">Phase 1 · Chart yourself</p>
       <h1 class="text-3xl font-semibold text-parchment">Your profile</h1>
-      <p class="mt-2 text-navy-600">
+      <p class="mt-2 text-gray-400">
         Plain questions, not a 40-field form. This feeds your Opportunity DNA — the
         summary the AI uses to find and explain your matches.
       </p>

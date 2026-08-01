@@ -46,7 +46,7 @@ async function saveOpportunity(id: string) {
       <p v-if="error" class="mt-4 text-sm text-coral">{{ error }}</p>
 
       <div v-if="hasSearched && !loading" class="mt-10">
-        <p v-if="!matches.length" class="text-navy-600">
+        <p v-if="!matches.length" class="text-gray-400">
           No strong matches yet — try broadening your profile's skills or interests.
         </p>
 

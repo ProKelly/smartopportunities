@@ -43,7 +43,7 @@ const waypoints = [
         Stop searching for opportunities.
         <span class="text-signal">Get charted a course to them.</span>
       </h1>
-      <p class="relative z-10 mt-6 max-w-xl text-lg text-navy-600">
+      <p class="relative z-10 mt-6 max-w-xl text-lg text-gray-300">
         Tell OpportunityOS AI who you are. It finds the scholarships, jobs, grants, and
         competitions that fit — explains why — and builds the plan to get you there.
       </p>
@@ -61,7 +61,7 @@ const waypoints = [
           <span class="font-mono text-sm text-signal">{{ String(i + 1).padStart(2, "0") }}</span>
           <div>
             <h3 class="text-lg font-medium text-parchment">{{ wp.label }}</h3>
-            <p class="mt-1 text-navy-600">{{ wp.copy }}</p>
+            <p class="mt-1 text-gray-400">{{ wp.copy }}</p>
           </div>
         </li>
       </ol>

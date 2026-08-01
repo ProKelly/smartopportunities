@@ -56,7 +56,7 @@ const cards = computed(() => {
               <h2 class="text-lg font-semibold text-parchment">Recommendations</h2>
               <NuxtLink to="/opportunities/find" class="text-sm text-chart hover:underline">Refresh matches →</NuxtLink>
             </div>
-            <div v-if="!summary.recommendations?.length" class="text-sm text-navy-600">
+            <div v-if="!summary.recommendations?.length" class="text-sm text-gray-400">
               No matches yet. Head to Find Opportunities to run the AI matching engine.
             </div>
             <ul v-else class="space-y-4">
@@ -66,7 +66,7 @@ const cards = computed(() => {
                     <NuxtLink :to="`/opportunities/${m.opportunity_id}`" class="font-medium text-parchment hover:text-chart">
                       {{ m.opportunity?.title }}
                     </NuxtLink>
-                    <p class="text-sm text-navy-600">{{ m.opportunity?.organization }}</p>
+                    <p class="text-sm text-gray-400">{{ m.opportunity?.organization }}</p>
                   </div>
                   <span class="font-mono text-sm text-signal">{{ m.match_score }}%</span>
                 </div>
@@ -76,7 +76,7 @@ const cards = computed(() => {
 
           <section class="card">
             <h2 class="mb-4 text-lg font-semibold text-parchment">Upcoming deadlines</h2>
-            <div v-if="!summary.upcoming_deadlines?.length" class="text-sm text-navy-600">
+            <div v-if="!summary.upcoming_deadlines?.length" class="text-sm text-gray-400">
               Nothing tracked yet — save or apply to opportunities to see deadlines here.
             </div>
             <ul v-else class="space-y-3">

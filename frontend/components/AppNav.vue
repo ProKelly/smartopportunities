@@ -43,7 +43,7 @@ const links = [
           <NuxtLink
             :to="link.to"
             class="text-sm font-medium transition-colors"
-            :class="route.path.startsWith(link.to) ? 'text-signal' : 'text-navy-600 hover:text-parchment'"
+            :class="route.path.startsWith(link.to) ? 'text-signal' : 'text-gray-400 hover:text-parchment'"
           >
             {{ link.label }}
           </NuxtLink>

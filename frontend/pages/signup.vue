@@ -25,11 +25,11 @@ async function onSubmit() {
 <template>
   <div class="flex min-h-screen items-center justify-center px-6">
     <div class="w-full max-w-md">
-      <NuxtLink to="/" class="mb-8 inline-block text-sm text-navy-600 hover:text-parchment">← Back home</NuxtLink>
+      <NuxtLink to="/" class="mb-8 inline-block text-sm text-gray-400 hover:text-parchment">← Back home</NuxtLink>
       <div class="card">
         <template v-if="!done">
           <h1 class="text-2xl font-semibold text-parchment">Chart your course</h1>
-          <p class="mt-1 text-sm text-navy-600">Create an account to build your Opportunity DNA.</p>
+          <p class="mt-1 text-sm text-gray-400">Create an account to build your Opportunity DNA.</p>
 
           <form class="mt-8 space-y-4" @submit.prevent="onSubmit">
             <div>
@@ -48,13 +48,13 @@ async function onSubmit() {
 
           <div class="my-6 flex items-center gap-3">
             <div class="h-px flex-1 bg-navy-700" />
-            <span class="text-xs text-navy-600">or</span>
+            <span class="text-xs text-gray-400">or</span>
             <div class="h-px flex-1 bg-navy-700" />
           </div>
 
           <button class="btn-ghost w-full" @click="signInWithGoogle">Continue with Google</button>
 
-          <p class="mt-6 text-center text-sm text-navy-600">
+          <p class="mt-6 text-center text-sm text-gray-400">
             Already have an account?
             <NuxtLink to="/login" class="text-chart hover:underline">Sign in</NuxtLink>
           </p>
@@ -62,7 +62,7 @@ async function onSubmit() {
 
         <template v-else>
           <h1 class="text-2xl font-semibold text-parchment">Check your inbox</h1>
-          <p class="mt-3 text-navy-600">
+          <p class="mt-3 text-gray-400">
             We sent a confirmation link to <strong class="text-parchment">{{ email }}</strong>.
             Confirm your email, then sign in to build your profile.
           </p>

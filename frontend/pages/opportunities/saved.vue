@@ -27,7 +27,7 @@ async function unsave(id: string) {
       <h1 class="text-3xl font-semibold text-parchment">Saved opportunities</h1>
 
       <div v-if="loading" class="mt-8 text-navy-600">Loading...</div>
-      <p v-else-if="!saved.length" class="mt-8 text-navy-600">
+      <p v-else-if="!saved.length" class="mt-8 text-gray-400">
         Nothing saved yet. <NuxtLink to="/opportunities/find" class="text-chart hover:underline">Find opportunities →</NuxtLink>
       </p>
 
@@ -38,7 +38,7 @@ async function unsave(id: string) {
             <NuxtLink :to="`/opportunities/${o.id}`" class="mt-1 block text-lg font-medium text-parchment hover:text-chart">
               {{ o.title }}
             </NuxtLink>
-            <p class="text-sm text-navy-600">{{ o.organization }} · deadline {{ o.deadline || "rolling" }}</p>
+            <p class="text-sm text-gray-400">{{ o.organization }} · deadline {{ o.deadline || "rolling" }}</p>
           </div>
           <button class="btn-ghost !px-4 !py-2 text-sm" @click="unsave(o.id)">Remove</button>
         </li>

@@ -40,7 +40,7 @@ async function markApplied() {
   <div>
     <AppNav />
     <main class="mx-auto max-w-3xl px-6 py-12">
-      <NuxtLink to="/opportunities/find" class="text-sm text-navy-600 hover:text-parchment">← Back to matches</NuxtLink>
+      <NuxtLink to="/opportunities/find" class="text-sm text-gray-400 hover:text-parchment">← Back to matches</NuxtLink>
 
       <div v-if="loading" class="mt-8 text-navy-600">Loading...</div>
       <p v-else-if="error" class="mt-8 text-coral">{{ error }}</p>
@@ -48,7 +48,7 @@ async function markApplied() {
       <template v-else-if="opp">
         <span class="waypoint-label mt-8 block">{{ opp.category }}</span>
         <h1 class="mt-2 text-3xl font-semibold text-parchment">{{ opp.title }}</h1>
-        <p class="mt-1 text-navy-600">{{ opp.organization }} · {{ opp.country }}</p>
+        <p class="mt-1 text-gray-400">{{ opp.organization }} · {{ opp.country }}</p>
 
         <div class="card mt-6">
           <p class="text-parchment">{{ opp.description }}</p>

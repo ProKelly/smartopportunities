@@ -50,7 +50,7 @@ async function selectRoadmap(id: string) {
     <main class="mx-auto max-w-3xl px-6 py-12">
       <p class="waypoint-label mb-2">Phase 6 · The roadmap generator</p>
       <h1 class="text-3xl font-semibold text-parchment">Roadmap</h1>
-      <p class="mt-2 text-navy-600">Tell us where you want to go. We'll chart the months to get there.</p>
+      <p class="mt-2 text-gray-400">Tell us where you want to go. We'll chart the months to get there.</p>
 
       <form class="card mt-8" @submit.prevent="generate">
         <label class="waypoint-label mb-2 block">Your goal</label>
@@ -63,7 +63,7 @@ async function selectRoadmap(id: string) {
 
       <section v-if="roadmap" class="mt-10">
         <h2 class="text-xl font-semibold text-parchment">{{ roadmap.goal }}</h2>
-        <p class="mt-1 text-navy-600">{{ roadmap.summary }}</p>
+        <p class="mt-1 text-gray-400">{{ roadmap.summary }}</p>
 
         <ol class="mt-6 space-y-4">
           <li v-for="m in roadmap.months" :key="m.month" class="card flex gap-6">
@@ -73,7 +73,7 @@ async function selectRoadmap(id: string) {
               <div class="mt-2 flex flex-wrap gap-2">
                 <span v-for="f in m.focus_areas" :key="f" class="rounded-full border border-chart/40 px-3 py-1 text-xs text-chart">{{ f }}</span>
               </div>
-              <ul class="mt-3 space-y-1 text-sm text-navy-600">
+              <ul class="mt-3 space-y-1 text-sm text-gray-400">
                 <li v-for="ms in m.milestones" :key="ms">· {{ ms }}</li>
               </ul>
             </div>
@@ -85,7 +85,7 @@ async function selectRoadmap(id: string) {
         <h2 class="mb-4 text-lg font-semibold text-parchment">Past roadmaps</h2>
         <ul class="space-y-2">
           <li v-for="r in past" :key="r.id">
-            <button @click="selectRoadmap(r.id)" class="text-sm text-navy-600 hover:text-parchment text-left transition-colors">
+            <button @click="selectRoadmap(r.id)" class="text-sm text-gray-400 hover:text-parchment text-left transition-colors">
               · {{ r.goal }}
             </button>
           </li>

@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-01-01",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
+  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@nuxt/icon"],
   css: ["~/assets/css/main.css"],
   app: {
     head: {
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        { rel: "icon", type: "image/png", href: "/cityos.png" },
+        { rel: "icon", type: "image/png", href: "/cityos.svg" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
         {

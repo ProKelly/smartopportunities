@@ -149,6 +149,27 @@ create policy "roadmaps_select_own" on roadmaps for select using (auth.uid() = u
 create policy "roadmaps_insert_own" on roadmaps for insert with check (auth.uid() = user_id);
 
 -- ─────────────────────────────────────────────────────────────────────────
+-- DOCUMENTS  (generated CVs and cover letters — history for /documents)
+-- ─────────────────────────────────────────────────────────────────────────
+create table if not exists documents (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  doc_type text not null check (doc_type in ('cv', 'cover_letter')),
+  description text default '',
+  opportunity_id uuid references opportunities(id) on delete set null,
+  content jsonb not null,
+  created_at timestamptz default now()
+);
+
+alter table documents enable row level security;
+
+create policy "documents_select_own" on documents for select using (auth.uid() = user_id);
+create policy "documents_insert_own" on documents for insert with check (auth.uid() = user_id);
+create policy "documents_delete_own" on documents for delete using (auth.uid() = user_id);
+
+create index if not exists documents_user_type_idx on documents (user_id, doc_type, created_at desc);
+
+-- ─────────────────────────────────────────────────────────────────────────
 -- updated_at trigger for profiles
 -- ─────────────────────────────────────────────────────────────────────────
 create or replace function set_updated_at()

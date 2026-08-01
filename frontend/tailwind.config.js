@@ -10,23 +10,66 @@ export default {
     extend: {
       colors: {
         // "Night chart" palette — a navigator's chart at dusk.
+        // Full numeric scales (50-950) so standard Tailwind conventions like
+        // `text-chart-400` or `border-navy-500` resolve everywhere, not just
+        // the original DEFAULT/dim shorthand.
         navy: {
-          950: "#0B0F1F",
-          900: "#12172B",
-          800: "#1B2140",
-          700: "#262E52",
+          50: "#F4F5FA",
+          100: "#DEE1F0",
+          200: "#B9C0DE",
+          300: "#8D97C4",
+          400: "#6673A8",
+          500: "#4A5488",
           600: "#333C68",
+          700: "#262E52",
+          800: "#1B2140",
+          900: "#12172B",
+          950: "#0B0F1F",
         },
-        parchment: "#F6F4EC",
+        parchment: {
+          DEFAULT: "#F6F4EC",
+          50: "#FFFFFF",
+          100: "#FEFDFB",
+          200: "#FAF9F3",
+          300: "#F6F4EC",
+          400: "#F6F4EC",
+          500: "#E4E0D0",
+          600: "#C7C1A8",
+        },
         signal: {
           DEFAULT: "#F2B84B", // beacon gold — primary accent
           dim: "#C9922E",
+          50: "#FDF6E9",
+          100: "#FBEBCB",
+          200: "#F8DAA1",
+          300: "#F5C976",
+          400: "#F2B84B",
+          500: "#DBA234",
+          600: "#C9922E",
+          700: "#9C7124",
         },
         chart: {
           DEFAULT: "#4FD1C5", // charted-route teal — secondary accent
           dim: "#2E9A90",
+          50: "#EFFDFB",
+          100: "#D3F7F2",
+          200: "#A9ECE4",
+          300: "#7FE0D6",
+          400: "#4FD1C5",
+          500: "#3FBBAF",
+          600: "#2E9A90",
+          700: "#237570",
         },
-        coral: "#EF7B6A", // deadlines / urgency
+        coral: {
+          DEFAULT: "#EF7B6A",
+          50: "#FDF0EE",
+          100: "#FADAD4",
+          200: "#F5B5AA",
+          300: "#F29B8B",
+          400: "#EF7B6A",
+          500: "#E4573F",
+          600: "#C13F29",
+        },
       },
       fontFamily: {
         display: ["Fraunces", "serif"],

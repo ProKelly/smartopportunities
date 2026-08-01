@@ -91,6 +91,63 @@ def generate_career_coach_output(profile: dict, opportunity: dict | None = None)
     return _chat_json(system_prompt, user_prompt, settings.groq_reasoning_model)
 
 
+def generate_cv_document(profile: dict, description: str, opportunity: dict | None = None) -> dict:
+    """Generates a structured, ATS-friendly CV using only what the user actually
+    provided (skills, education, goals, pasted resume text) — the model is told
+    explicitly not to invent employers, titles, or achievements that weren't given."""
+    system_prompt = (
+        "You are an expert CV writer. Build a professional, honest CV using ONLY "
+        "information present in the user's profile (skills, education, goals, "
+        "interests, and any pasted resume text). Do NOT invent employers, job "
+        "titles, dates, or achievements that are not implied by the given data. "
+        "If the user pasted resume text, restructure and polish it. If there is "
+        "no work history, build 'experience' entries from real projects/skills/"
+        "goals framed honestly (e.g. as coursework, personal projects, or "
+        "initiatives) rather than fabricating jobs. Use the user's 'portrayal "
+        "note' to choose emphasis and tone, not to add false facts. "
+        "Respond ONLY with a JSON object matching this shape: "
+        '{"full_name": string, "headline": string (a one-line professional '
+        'title/positioning statement), "location": string, "summary": string '
+        "(3-4 sentences), \"skills\": [string], \"experience\": "
+        '[{"heading": string, "subheading": string, "bullets": [string]}], '
+        '"education": [{"heading": string, "subheading": string, "bullets": '
+        '[string]}], "languages": [string]}.'
+    )
+    user_prompt = json.dumps(
+        {
+            "profile": profile,
+            "portrayal_note": description,
+            "target_opportunity": opportunity,
+        }
+    )
+    return _chat_json(system_prompt, user_prompt, settings.groq_reasoning_model, temperature=0.5)
+
+
+def generate_cover_letter_document(profile: dict, description: str, opportunity: dict | None = None) -> dict:
+    """Generates a full cover letter (salutation, body paragraphs, closing) —
+    distinct from the shorter cover_letter_draft inside the general career-coach
+    endpoint, since this one is meant to be exported as a standalone document."""
+    system_prompt = (
+        "You are an expert cover letter writer. Write a complete, professional "
+        "cover letter using ONLY information present in the user's profile. Do "
+        "not invent facts. Use the user's 'portrayal note' to guide emphasis and "
+        "tone. If a target opportunity is given, address the letter to that role "
+        "specifically; otherwise keep it general but still concrete. "
+        "Respond ONLY with a JSON object: {\"full_name\": string, "
+        '"salutation": string (e.g. "Dear Hiring Manager,"), '
+        '"body_paragraphs": [string] (3-4 paragraphs), '
+        '"closing": string (e.g. "Sincerely,")}.'
+    )
+    user_prompt = json.dumps(
+        {
+            "profile": profile,
+            "portrayal_note": description,
+            "target_opportunity": opportunity,
+        }
+    )
+    return _chat_json(system_prompt, user_prompt, settings.groq_reasoning_model, temperature=0.5)
+
+
 def embed_text_fallback_keywords(text: str) -> list[str]:
     """Lightweight keyword extraction used only if a dedicated embedding model isn't
     configured. Real embeddings are produced client-side via the embedding_service."""

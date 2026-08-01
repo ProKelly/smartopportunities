@@ -194,7 +194,7 @@ const about = {
 
       <!-- Logo -->
       <div class="relative z-10 mb-8">
-        <img src="/cityos.png" alt="CityOS Logo" class="h-20 w-auto sm:h-24 object-contain" />
+        <img src="/cityos.svg" alt="CityOS Logo" class="h-20 w-auto sm:h-24 object-contain" />
       </div>
 
       <!-- Badge -->
